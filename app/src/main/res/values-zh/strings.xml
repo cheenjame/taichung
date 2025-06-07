@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">台中指南</string>
+    <string name="marine_spots">海域遊憩景點</string>
+    <string name="flower_spots">賞花景點</string>
+    <string name="switch_language">切換語言</string>
+    <string name="flower_type">花卉種類：%s</string>
+    <string name="best_viewing_time">最佳觀賞時間：%s</string>
+    <string name="loading">載入中...</string>
+    <string name="error_loading">載入資料時發生錯誤</string>
+</resources> 

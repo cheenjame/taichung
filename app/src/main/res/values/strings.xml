@@ -1,4 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Taichung</string>
-    <string name="btn_switch_lang">切換語言</string>
+    <string name="app_name">Taichung Guide</string>
+    <string name="marine_spots">Marine Recreation Spots</string>
+    <string name="flower_spots">Flower Spots</string>
+    <string name="switch_language">Switch Language</string>
+    <string name="flower_type">Flower Type: %s</string>
+    <string name="best_viewing_time">Best Viewing Time: %s</string>
+    <string name="loading">Loading...</string>
+    <string name="error_loading">Error loading data</string>
 </resources>
