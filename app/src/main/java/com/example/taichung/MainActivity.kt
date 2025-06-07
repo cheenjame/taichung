@@ -12,36 +12,36 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.taichung.ui.theme.TaichungTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    private val viewModel: MainViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
-            TaichungTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+            val flowerList by viewModel.flowerList.observeAsState(emptyList())
+            val navController = rememberNavController()
+
+            NavHost(navController = navController, startDestination = "main") {
+                composable("main") {
+                    MainScreen(
+                        flowerList = flowerList,
+                        onWebClick = { url -> navController.navigate("web/$url") },
+                        onSwitchLang = { recreate() } // 只是範例，可以搭配多語言切換實作
                     )
+                }
+                composable(
+                    "web/{url}",
+                    arguments = listOf(navArgument("url") { type = NavType.StringType })
+                ) { backStackEntry ->
+                    WebViewScreen(url = backStackEntry.arguments?.getString("url") ?: "")
                 }
             }
         }
-    }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    TaichungTheme {
-        Greeting("Android")
+        viewModel.fetchFlowers()
     }
 }

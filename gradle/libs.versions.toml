@@ -35,6 +35,8 @@ rxjava3-kotlin = { module = "io.reactivex.rxjava3:rxkotlin", version = "3.0.1" }
 rxjava3-android = { module = "io.reactivex.rxjava3:rxandroid", version = "3.0.2" }
 retrofit-rxjava3 = { module = "com.squareup.retrofit2:adapter-rxjava3", version = "2.9.0" }
 
+lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version = "2.7.0" }
+
 navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version = "2.7.7" }
 navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version = "2.7.7" }
 lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version = "2.7.0" }

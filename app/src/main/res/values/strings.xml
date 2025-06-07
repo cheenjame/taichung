@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Taichung</string>
+    <string name="btn_switch_lang">切換語言</string>
 </resources>
