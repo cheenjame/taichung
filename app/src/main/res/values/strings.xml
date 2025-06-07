@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Taichung Guide</string>
-    <string name="marine_spots">Marine Recreation Spots</string>
-    <string name="flower_spots">Flower Spots</string>
+    <string name="marine_spots">Marine Recreation</string>
+    <string name="flower_spots">Flower Viewing</string>
     <string name="switch_language">Switch Language</string>
     <string name="flower_type">Flower Type: %s</string>
     <string name="best_viewing_time">Best Viewing Time: %s</string>
     <string name="loading">Loading...</string>
     <string name="error_loading">Error loading data</string>
+    <string name="search_spots">Search spots</string>
+    <string name="retry">Retry</string>
+    <string name="no_spots_found">No spots found</string>
+    <string name="no_marine_spots_found">No marine recreation spots found</string>
+    <string name="no_flower_spots_found">No flower viewing spots found</string>
+    <string name="spots_count">Found %d spots</string>
+    <string name="marine_spots_count">Found %d marine recreation spots</string>
+    <string name="flower_spots_count">Found %d flower viewing spots</string>
+    <string name="click_to_view">Click to view</string>
+    <string name="phone">Phone</string>
+    <string name="website">Website</string>
+    <string name="map">Map</string>
+    <string name="opening_hours">Opening hours: %s</string>
+    <string name="back">Back</string>
+    <string name="detail_info">Detail Info</string>
 </resources>

@@ -39,11 +39,17 @@ class MainViewModel @Inject constructor(
             repository.getMarineRecreationSpots()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({ response ->
-                    _marineSpots.value = response.spots
+                .subscribe({ spots ->
+                    android.util.Log.d("MainViewModel", "Marine API response: $spots")
+                    android.util.Log.d("MainViewModel", "Marine spots count: ${spots.size}")
+                    spots.forEach { spot ->
+                        android.util.Log.d("MainViewModel", "Marine spot: ${spot.safeName}, ${spot.safeAddress}")
+                    }
+                    _marineSpots.value = spots
                     _isLoading.value = false
                 }, { error ->
-                    _error.value = error.message
+                    android.util.Log.e("MainViewModel", "Error loading marine spots", error)
+                    _error.value = "載入海域遊憩資料失敗: ${error.message}"
                     _isLoading.value = false
                 })
         )
@@ -55,11 +61,17 @@ class MainViewModel @Inject constructor(
             repository.getFlowerSpots()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({ response ->
-                    _flowerSpots.value = response.spots
+                .subscribe({ spots ->
+                    android.util.Log.d("MainViewModel", "Flower API response: $spots")
+                    android.util.Log.d("MainViewModel", "Flower spots count: ${spots.size}")
+                    spots.forEach { spot ->
+                        android.util.Log.d("MainViewModel", "Flower spot: ${spot.safeName}, ${spot.safeAddress}")
+                    }
+                    _flowerSpots.value = spots
                     _isLoading.value = false
                 }, { error ->
-                    _error.value = error.message
+                    android.util.Log.e("MainViewModel", "Error loading flower spots", error)
+                    _error.value = "載入賞花資料失敗: ${error.message}"
                     _isLoading.value = false
                 })
         )

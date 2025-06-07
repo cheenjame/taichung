@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">台中指南</string>
-    <string name="marine_spots">海域遊憩景點</string>
+    <string name="marine_spots">海域遊憩</string>
     <string name="flower_spots">賞花景點</string>
     <string name="switch_language">切換語言</string>
     <string name="flower_type">花卉種類：%s</string>
     <string name="best_viewing_time">最佳觀賞時間：%s</string>
     <string name="loading">載入中...</string>
     <string name="error_loading">載入資料時發生錯誤</string>
+    <string name="search_spots">搜尋景點</string>
+    <string name="retry">重試</string>  
+    <string name="no_spots_found">找不到景點</string>
+    <string name="no_marine_spots_found">沒有找到海域遊憩景點</string>
+    <string name="no_flower_spots_found">沒有找到賞花景點</string>
+    <string name="spots_count">共找到 %d 個景點</string>
+    <string name="marine_spots_count">共找到 %d 個海域遊憩景點</string>
+    <string name="flower_spots_count">共找到 %d 個賞花景點</string>
+    <string name="click_to_view">點擊查看</string>
+    <string name="phone">電話</string>
+    <string name="website">官網</string>
+    <string name="map">地圖</string>
+    <string name="opening_hours">開放時間：%s</string>
+    <string name="back">返回</string>
+    <string name="detail_info">詳細資訊</string>
 </resources> 

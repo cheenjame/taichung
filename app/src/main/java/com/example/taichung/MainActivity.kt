@@ -13,7 +13,9 @@ import com.example.taichung.ui.screens.MainScreen
 import com.example.taichung.ui.theme.TaichungTheme
 import com.example.taichung.utils.LocaleHelper
 import com.example.taichung.viewmodel.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private val viewModel: MainViewModel by viewModels()
 
@@ -32,13 +34,20 @@ class MainActivity : ComponentActivity() {
     private fun switchLanguage() {
         val currentLang = LocaleHelper.getLanguage(resources)
         val newLang = if (currentLang == "zh") "en" else "zh"
+        
+        // 儲存語言選擇
+        getSharedPreferences("settings", Context.MODE_PRIVATE)
+            .edit()
+            .putString("language", newLang)
+            .apply()
+        
         val context = LocaleHelper.setLocale(this, newLang)
         recreate()
     }
 
     override fun attachBaseContext(newBase: Context) {
         val lang =
-                getSharedPreferences("settings", Context.MODE_PRIVATE).getString("language", "zh")
+                newBase.getSharedPreferences("settings", Context.MODE_PRIVATE).getString("language", "zh")
                         ?: "zh"
         super.attachBaseContext(LocaleHelper.setLocale(newBase, lang))
     }
